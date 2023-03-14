@@ -13,11 +13,18 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+body{
+    width: 100vw;
+    height: 100vh;
+    user-select: none;
+    overflow-x: hidden;
+}
 /* Se da estilos a la cabecera */
 .cabecera{
     background-color: var(--color-primario);
     color: var(--color-letra);
     display: flex;
+    height: 100px;
     flex-flow: row wrap;
     align-items: center;
     justify-content: space-between;
@@ -28,22 +35,26 @@
     font-family: 'Poppins';
     text-align: center;
     font-size: 30px;
-    margin-left: -4em;
+}
+.cabecera .aside_head{
+    margin-right: 2em;
 }
 .cabecera .aside_head:first-child{
     margin-right: .3em;
 }
 .cabecera .aside_head a{
     color: var(--color-letra);
-    margin: 0 8px;
+    margin: 0 10px;
 }
 /* ****************** */
 
 /* Se comienza a dar estilos a la barra lateral */
 .sidebar{
-    position: relative;
-    float: left;
-    height: 100vh;
+    position:fixed;
+    top: 100;
+    left: 0;
+    height: 100%;
+    width: 200px;
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
@@ -51,10 +62,15 @@
     margin-right: 15px;
     padding: 10px;
 }
+
 .sidebar .main_menu .menu_item{
     color: var(--color-letra);
     padding: 10px;
     margin-bottom: 20px;
+    transition: all .3s ease;
+}
+.sidebar .main_menu .menu_item:hover{
+    background-color: var(--color-secundario);
 }
 .sidebar .main_menu .menu_item a{
     color: var(--color-letra);
@@ -72,4 +88,27 @@
     display: grid;
     grid-template-columns: 30px 90px;
     justify-content: space-evenly;
+}
+
+.content{
+    display: flex;
+    flex-flow: column wrap;
+    min-height: 500px;
+    max-height: 900px;
+}
+
+.footer{
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 20px;
+    margin-left: -15px;
+    min-height: 100px;
+    color: #fff;
+    font-size: 1.1em;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-secundario);
+}
+.footer p{
+    margin-bottom: 10px;
 }
