@@ -1,3 +1,4 @@
+/* Declaracion de Variables para el diseño */
 :root{
     --color-primario: #1F74AF;
     --color-secundario: #2494D8;
@@ -5,75 +6,70 @@
     --color-letra-hover: #000000;
     --color-letra-secundario: #9B9A9A;
 }
-
+/* reset de estilos */
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     text-decoration: none;
 }
-
+/* Se da estilos a la cabecera */
 .cabecera{
-    background: var(--color-primario);
-    display: grid;
-    grid-template-columns: 250px 500px 200px;
-    column-gap: 250px;
-    place-items: center;
-    padding: 10px;
+    background-color: var(--color-primario);
+    color: var(--color-letra);
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
 }
 
 .cabecera h1{
     font-family: 'Poppins';
-    color: var(--color-letra);
-    font-size: 30px;
     text-align: center;
+    font-size: 30px;
+    margin-left: -4em;
 }
-.cabecera .aside_head{
-    color: var(--color-letra);
+.cabecera .aside_head:first-child{
+    margin-right: .3em;
 }
 .cabecera .aside_head a{
     color: var(--color-letra);
-    margin-right: 5px;
+    margin: 0 8px;
 }
-.cabecera .aside_head a>i{
-    margin-right: 5px;
-}
+/* ****************** */
 
+/* Se comienza a dar estilos a la barra lateral */
 .sidebar{
     position: relative;
     float: left;
-    width:200px;
-    min-width: 200px;
-    margin-right: 20px;
     height: 100vh;
-    background-color: var(--color-primario);
-}
-.sidebar .main_menu{
-    padding: 20px;
-}
-.sidebar .menu_item{
     display: flex;
-    align-items: center;
-    color: var(--color-letra);
-    margin-bottom: 25px;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    background-color: var(--color-primario);
+    margin-right: 15px;
+    padding: 10px;
 }
-.sidebar .menu_item a{ 
+.sidebar .main_menu .menu_item{
+    color: var(--color-letra);
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.sidebar .main_menu .menu_item a{
     color: var(--color-letra);
     margin-left: 10px;
-    font-size: 20px;
 }
 
-.nav_footer{
+.sidebar .nav_footer{
     display: grid;
-    grid-template-columns: 80px 80px;
-    gap: 25px;
-    padding: 10px;
-    width: 100%;
-}
-.nav_footer .profile_info{
-    display: grid;
-    grid-template-columns: 30px 50px;
-    gap: 15px;
-    place-items: center;
+    grid-template-columns: 120px 30px;
+    justify-content: space-evenly;
+    align-items: center;
     color: var(--color-letra);
+}
+.sidebar .nav_footer .profile_info{
+    display: grid;
+    grid-template-columns: 30px 90px;
+    justify-content: space-evenly;
 }
