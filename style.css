@@ -5,6 +5,7 @@
     --color-letra: #FFFFFF;
     --color-letra-hover: #000000;
     --color-letra-secundario: #9B9A9A;
+    --color-letra-desactive: #5b5b5b;
 }
 /* reset de estilos */
 *{
@@ -38,6 +39,7 @@ body{
 }
 .cabecera .aside_head{
     margin-right: 2em;
+    font-size: 18px;
 }
 .cabecera .aside_head:first-child{
     margin-right: .3em;
@@ -46,14 +48,17 @@ body{
     color: var(--color-letra);
     margin: 0 10px;
 }
+.cabecera .aside_head a>i{
+    color: var(--color-letra);
+    margin-left: 8px;
+}
 /* ****************** */
 
 /* Se comienza a dar estilos a la barra lateral */
 .sidebar{
-    position:fixed;
-    top: 100;
-    left: 0;
-    height: 100%;
+    position:relative;
+    float: left;
+    min-height: 75%;
     width: 200px;
     display: flex;
     flex-flow: column wrap;
@@ -70,6 +75,7 @@ body{
     transition: all .3s ease;
 }
 .sidebar .main_menu .menu_item:hover{
+    cursor: pointer;
     background-color: var(--color-secundario);
 }
 .sidebar .main_menu .menu_item a{
@@ -84,6 +90,9 @@ body{
     align-items: center;
     color: var(--color-letra);
 }
+.sidebar .nav_footer a{
+    color: var(--color-letra);
+}
 .sidebar .nav_footer .profile_info{
     display: grid;
     grid-template-columns: 30px 90px;
@@ -96,16 +105,36 @@ body{
     min-height: 500px;
     max-height: 900px;
 }
-
+.content .head_content{
+    display: flex;
+    flex-flow: row wrap;
+    height: 50px;
+    /* background-color: azure; */
+    color: var(--color-letra-desactive);
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+.content .head_content h2{
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 30px;
+}
+.content .head_content h4{
+    font-size: 30px;
+    font-family: 'Quicksand';
+    font-weight: 300;
+}
 .footer{
-    display: grid;
-    place-items: center;
+    float: inline-end;
     text-align: center;
-    padding: 20px;
-    margin-left: -15px;
+    padding: 10px;
+    width: 100%;
     min-height: 100px;
     color: #fff;
-    font-size: 1.1em;
+    font-size: 1em;
     font-family: 'Montserrat', sans-serif;
     background-color: var(--color-secundario);
 }
